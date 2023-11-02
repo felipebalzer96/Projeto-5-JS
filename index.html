@@ -1,9 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jogo adivinhe o numero</title>
+    <script>
+        alert("Advinhe um numero entre os numeros da sua escolha")
+
+let min = Number(prompt("Qual o numero Minimo?"));
+let max = Number(prompt("Qual o numero maximo?"));
+let chances = 7
+let numeroSecreto = Math.floor(Math.random()*(max - min +1)+min)
+
+
+while(chances > 0){
+  let numero = Number(prompt("Qual o numero secreto entre " + min + " e "+ max + " ? "));
+  
+  if(numero == numeroSecreto){
+    alert("Prabens você acertou o numero secreto entre "+ min + " e "+ max);
+    break;
+  }else if (numero < numeroSecreto ){
+    chances--;
+    alert("O numero secreto é menor do que o numero escolhido,agora voçê tem "+ chances +" restantes " );
+  }else {
+    chances--;
+    alert("O numero selecionado é maior que o numero secreto,agora voçê tem "+ chances + " restantes ");
+  }if(chances==0){
+    alert("O numero secreto era "+ numeroSecreto);
+  }
+}
+
+    </script>
 </head>
 <body>
     
